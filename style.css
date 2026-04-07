@@ -1012,11 +1012,12 @@ nav a.active::after {
 /*=========== RESPONSIVE DESIGN ==================*/
 /* --- Handphone (Lebar layar di bawah 768px) --- */
 @media (max-width: 768px) {
-  .container { 
-    flex-direction: column; /* Menu/Card jadi tumpuk vertikal */
-    width: 100%; 
-    padding: 20px;
-  }
+header {
+        padding: 10px 0;
+        height: auto; /* Biar tinggi header mengikuti isi */
+        flex-direction: column; /* Susun logo dan nav ke bawah */
+        gap: 10px;
+    }
   
   h1 { font-size: 24px; } /* Mengecilkan teks di HP */
 }
