@@ -1010,14 +1010,69 @@ nav a.active::after {
 }
 
 /*=========== RESPONSIVE DESIGN ==================*/
-/* --- Handphone (Lebar layar di bawah 768px) --- */
+
 @media (max-width: 768px) {
-header {
-        padding: 10px 0;
-        height: auto; /* Biar tinggi header mengikuti isi */
-        flex-direction: column; /* Susun logo dan nav ke bawah */
-        gap: 10px;
+    header {
+        flex-direction: column; 
+        height: auto; 
+        padding: 10px 5px !important; /* Kecilkan padding agar tidak terlalu lebar */
+        gap: 8px; /* Jarak antar elemen lebih rapat */
+        justify-content: center;
     }
-  
-  h1 { font-size: 24px; } /* Mengecilkan teks di HP */
+
+    /* 1. Perbaikan Logo & Judul agar tidak terpotong ke atas */
+    .logo-container {
+        display: flex;
+        flex-direction: row; /* Kembali ke row agar hemat tempat vertikal */
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 5px; /* Memberi jarak dari atas layar browser */
+    }
+
+    .logo-container img {
+        width: 32px; /* Logo lebih kecil agar header ramping */
+        height: auto;
+    }
+
+    .logo-container h1 {
+        font-size: 18px; /* Ukuran font lebih kecil agar tidak makan tempat */
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    /* 2. Navigasi dibuat lebih rapat */
+    nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 5px; /* Jarak antar menu dipersempit */
+        padding-bottom: 5px;
+    }
+
+    nav a {
+        font-size: 12px; /* Font menu lebih kecil */
+        padding: 4px 8px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    /* Ikon di navigasi dibuat lebih kecil */
+    nav a i {
+        font-size: 11px;
+    }
+
+    /* 3. Penyesuaian konten di bawahnya */
+    /* Karena header sudah ramping, padding-top pada main kita kurangi */
+    main#content, 
+    .hero-section {
+        padding-top: 130px !important; 
+    }
+
+    /* Khusus untuk teks Hero agar tidak menabrak header */
+    .hero-text h1 {
+        font-size: 28px; /* Mengecilkan teks "Bersama Lawan Sampah Plastik" */
+        margin-top: 10px;
+    }
 }
